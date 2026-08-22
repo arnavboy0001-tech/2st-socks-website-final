@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { COMPANY, PRODUCTS, TESTIMONIALS } from "../data/catalog";
+import { COMPANY, PRODUCTS, TESTIMONIALS, sendOnWhatsApp } from "../data/catalog";
 import {
   ArrowGlyph,
   ClockGlyph,
@@ -203,11 +203,12 @@ export function Contact() {
                       </svg>
                     </span>
                     <h3 className="mt-6 font-display text-3xl uppercase text-bone-50">
-                      Enquiry Received!
+                      Enquiry Opened in WhatsApp!
                     </h3>
                     <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-bone-100/70">
-                      Thank you{form.name ? `, ${form.name}` : ""}. Your requirement has been
-                      noted — our team will reach you with the best possible price, shortly.
+                      Thank you{form.name ? `, ${form.name}` : ""}. WhatsApp has opened with your
+                      requirement addressed to +91 91304 56458 — just press send and our team
+                      will reach you with the best possible price.
                     </p>
                     <button
                       onClick={() => setSent(false)}
@@ -221,11 +222,23 @@ export function Contact() {
                 <form
                   onSubmit={(e) => {
                     e.preventDefault();
+                    sendOnWhatsApp([
+                      "Hello Ammvi Knits & Hosiery!",
+                      "New enquiry from the website —",
+                      "",
+                      `Name: ${form.name}`,
+                      form.company && `Company / School / Club: ${form.company}`,
+                      `Mobile: ${form.phone}`,
+                      form.email && `Email: ${form.email}`,
+                      `Product of interest: ${form.product}`,
+                      form.quantity && `Approx. quantity: ${form.quantity} pairs`,
+                      form.message && `Requirement details: ${form.message}`,
+                    ]);
                     setSent(true);
                   }}
                 >
                   <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.28em] text-marigold-500">
-                    Submit Your Requirement
+                    Submit Your Requirement · Auto-sends to WhatsApp
                   </p>
                   <h3 className="mt-2 font-display text-3xl uppercase leading-none text-bone-50">
                     Get Instant Quote
@@ -261,11 +274,12 @@ export function Contact() {
                     type="submit"
                     className="group mt-7 flex w-full items-center justify-center gap-3 bg-marigold-500 py-4 font-mono text-[13px] font-bold uppercase tracking-[0.2em] text-pine-950 transition-all duration-300 hover:-translate-y-0.5 hover:bg-marigold-400 hover:shadow-[0_14px_36px_rgba(242,168,29,0.35)]"
                   >
-                    Send Enquiry
+                    <WhatsAppGlyph className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+                    Send via WhatsApp
                     <ArrowGlyph className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
                   </button>
                   <p className="mt-4 text-center font-mono text-[10px] uppercase tracking-[0.2em] text-bone-100/50">
-                    We reply within one working day · No spam, ever
+                    Opens WhatsApp to +91 91304 56458 with your enquiry pre-filled
                   </p>
                 </form>
               )}

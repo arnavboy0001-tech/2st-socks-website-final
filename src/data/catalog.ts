@@ -25,6 +25,22 @@ export const COMPANY = {
   gstArea: "Ichalkaranji (Kolhapur), Maharashtra",
 };
 
+/**
+ * Composes a WhatsApp deep-link (wa.me) addressed to the company number,
+ * with the enquiry message pre-filled. Opens WhatsApp with every detail
+ * typed in — the sender only has to press send.
+ */
+export function whatsappEnquiryUrl(rows: Array<string | false | null | undefined>): string {
+  const message = rows
+    .filter((r): r is string => Boolean(r && r.trim().length > 0))
+    .join("\n");
+  return `https://wa.me/${COMPANY.whatsapp}?text=${encodeURIComponent(message)}`;
+}
+
+export function sendOnWhatsApp(rows: Array<string | false | null | undefined>): void {
+  window.open(whatsappEnquiryUrl(rows), "_blank", "noopener,noreferrer");
+}
+
 export const ABOUT_TEXT = `Headquartered in Ichalkaranji (Kolhapur, Maharashtra), Ammvi Knits & Hosiery is engaged in the production of clothing that has a huge demand in the fashion industry. The company is known as an established manufacturer and supplier of premium quality kids socks, men's socks, ladies socks, cotton handkerchiefs, and sports stockings. We are also engaged in rendering sock customization services for which we adhere to the customer guidelines. We are committed to providing customers the best products with unique designs and at affordable prices. All our products have been appreciated for their matchless quality, impressive performance, and reasonable pricing.`;
 
 export const HISTORY_TEXT = `Ammvi Knits & Hosiery was established in the year 2011, when the industry veteran i.e. Mr. Manoj Patil (Owner) laid the foundation stone with an aim to serve buyers with superior quality garments and clothing. From a handful of knitting machines in Ichalkaranji — the "Manchester of Maharashtra" — the house of Ammvi has grown into a trusted name for hosiery across schools, sports clubs, retailers and institutions.`;

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
-import { CATEGORIES, PRODUCTS, Product } from "../data/catalog";
-import { ArrowGlyph, Reveal, SectionHead, SmartImg } from "./Shared";
+import { CATEGORIES, PRODUCTS, Product, sendOnWhatsApp } from "../data/catalog";
+import { ArrowGlyph, Reveal, SectionHead, SmartImg, WhatsAppGlyph } from "./Shared";
 
 type EnquiryFn = (product?: Product) => void;
 
@@ -185,6 +185,7 @@ export function EnquiryModal({
   const [sent, setSent] = useState(false);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [details, setDetails] = useState("");
 
   useEffect(() => {
     if (open) {
@@ -235,10 +236,11 @@ export function EnquiryModal({
                 <path d="m5 12.5 4.5 4.5L19 7.5" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="5 3" />
               </svg>
             </span>
-            <h3 className="mt-5 font-display text-2xl uppercase text-pine-900">Thank You!</h3>
+            <h3 className="mt-5 font-display text-2xl uppercase text-pine-900">Opening WhatsApp…</h3>
             <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-              Your enquiry{product ? ` for ${product.name}` : ""} has been received. Our team will
-              call you back with the best possible price.
+              WhatsApp has opened with your enquiry{product ? ` for ${product.name}` : ""}{" "}
+              addressed to +91 91304 56458 — press send and our team will call you back with the
+              best possible price.
             </p>
             <button
               onClick={onClose}
@@ -263,6 +265,15 @@ export function EnquiryModal({
               className="mt-6 space-y-4"
               onSubmit={(e) => {
                 e.preventDefault();
+                sendOnWhatsApp([
+                  "Hello Ammvi Knits & Hosiery!",
+                  "Product enquiry from the website —",
+                  "",
+                  `Product: ${product ? product.name : "General enquiry"}`,
+                  `Name: ${name}`,
+                  `Mobile: ${phone}`,
+                  details && `Quantity / colours / sizes: ${details}`,
+                ]);
                 setSent(true);
               }}
             >
@@ -283,15 +294,21 @@ export function EnquiryModal({
               />
               <textarea
                 rows={3}
+                value={details}
+                onChange={(e) => setDetails(e.target.value)}
                 placeholder={`Quantity, colours, sizes… (optional)`}
                 className="field resize-none"
               />
               <button
                 type="submit"
-                className="w-full bg-marigold-500 py-4 font-mono text-[12px] font-bold uppercase tracking-[0.2em] text-pine-950 transition-all duration-300 hover:-translate-y-0.5 hover:bg-marigold-400 hover:shadow-[0_12px_30px_rgba(242,168,29,0.4)]"
+                className="flex w-full items-center justify-center gap-2.5 bg-marigold-500 py-4 font-mono text-[12px] font-bold uppercase tracking-[0.2em] text-pine-950 transition-all duration-300 hover:-translate-y-0.5 hover:bg-marigold-400 hover:shadow-[0_12px_30px_rgba(242,168,29,0.4)]"
               >
-                Send Enquiry
+                <WhatsAppGlyph className="h-4.5 w-4.5" />
+                Send via WhatsApp
               </button>
+              <p className="text-center font-mono text-[10px] uppercase tracking-[0.18em] text-ink-soft/70">
+                Auto-addressed to +91 91304 56458 with your details
+              </p>
             </form>
           </>
         )}
