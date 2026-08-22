@@ -304,10 +304,9 @@ export const CUSTOM_PROCESS = [
 
 export const IMAGES = {
   heroFlatlay:
-    "https://image.qwenlm.ai/generated-images/2574c324-94e8-4249-9771-7b2cc8cfc6fb/_result.png",
+    "https://image.qwenlm.ai/generated-images/0508ef90-510b-4f8f-9f44-9fdd6cea2d67/_result.png",
   factory:
-    "https://image.qwenlm.ai/generated-images/4a466efa-f019-4d32-b19c-c6bd7a23ec5a/_result.png",
+    "https://image.qwenlm.ai/generated-images/430c392e-f692-4d26-8d7c-333fc35ec396/_result.png",
   bamboo:
-    "https://image.qwenlm.ai/generated-images/c8da12a4-94eb-4899-af50-bd943a33fe7a/_result.png",
-  about: "https://catalog.wlimg.com/about-image/about-02.jpg",
+    "https://image.qwenlm.ai/generated-images/c0b17829-160f-4a1b-814f-e73e3f934e0f/_result.png",
 };
