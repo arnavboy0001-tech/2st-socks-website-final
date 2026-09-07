@@ -19,8 +19,8 @@ import {
 /* ------------------------------ stats band ------------------------------ */
 export function StatsBand() {
   return (
-    <section className="relative z-10 bg-marigold-500 text-pine-950">
-      <div className="mx-auto grid max-w-7xl grid-cols-2 divide-pine-950/15 px-6 py-10 sm:grid-cols-3 lg:grid-cols-5 lg:divide-x">
+    <section className="relative z-10 bg-pine-900 text-bone-50">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 divide-pine-700 px-6 py-10 sm:grid-cols-3 lg:grid-cols-5 lg:divide-x">
         {STATS.map((s, i) => (
           <Reveal key={s.label} delay={i * 90} className="px-4 py-4 text-center first:pl-0 lg:text-left">
             <p className="font-display text-4xl leading-none tracking-tight sm:text-5xl">
@@ -78,8 +78,8 @@ export function About() {
                     className="ken-burns aspect-[4/3] w-full object-cover"
                   />
                 </div>
-                <div className="absolute -bottom-8 -right-2 w-56 rotate-3 bg-pine-900 p-5 text-bone-50 shadow-[0_20px_50px_rgba(16,32,26,0.4)] transition-transform duration-500 hover:rotate-0 sm:-right-6">
-                  <YarnGlyph className="h-8 w-8 text-marigold-500" />
+                <div className="absolute -bottom-8 -right-2 w-56 rotate-3 bg-pine-900 p-5 text-bone-50 shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-transform duration-500 hover:rotate-0 sm:-right-6">
+                  <YarnGlyph className="h-8 w-8 text-bone-50" />
                   <p className="mt-3 font-display text-lg uppercase leading-tight">
                     Cotton · Bamboo · Compressed Knits
                   </p>
@@ -158,10 +158,10 @@ export function About() {
           <ol className="relative grid gap-10 border-l-2 border-dashed border-fern-600/40 pl-8 sm:grid-cols-2 sm:gap-x-12 lg:grid-cols-4 lg:gap-x-8">
             {MILESTONES.map((m, i) => (
               <Reveal as="li" key={m.year} delay={i * 130} className="relative">
-                <span className="absolute -left-[41px] top-1 grid h-5 w-5 place-items-center rounded-full border-2 border-fern-600 bg-bone-100">
-                  <span className="h-2 w-2 rounded-full bg-marigold-500" />
+                <span className="absolute -left-[41px] top-1 grid h-5 w-5 place-items-center rounded-full border-2 border-pine-600 bg-bone-100">
+                  <span className="h-2 w-2 rounded-full bg-pine-700" />
                 </span>
-                <p className="font-display text-3xl uppercase text-marigold-600">{m.year}</p>
+                <p className="font-display text-3xl uppercase text-pine-700">{m.year}</p>
                 <h3 className="mt-2 font-display text-xl uppercase tracking-wide text-pine-900">
                   {m.title}
                 </h3>

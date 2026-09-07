@@ -193,11 +193,11 @@ export function Contact() {
 
           {/* right — the form */}
           <Reveal delay={200}>
-            <div className="relative border-t-4 border-marigold-500 bg-pine-950 p-8 text-bone-100 shadow-[0_30px_70px_rgba(16,32,26,0.35)] sm:p-10">
+            <div className="relative border-t-4 border-pine-700 bg-pine-950 p-8 text-bone-100 shadow-[0_30px_70px_rgba(0,0,0,0.35)] sm:p-10">
               {sent ? (
                 <div className="grid min-h-[480px] place-items-center text-center">
                   <div>
-                    <span className="mx-auto grid h-20 w-20 place-items-center rounded-full bg-fern-600/20 text-fern-300">
+                    <span className="mx-auto grid h-20 w-20 place-items-center rounded-full bg-bone-100/20 text-bone-100">
                       <svg viewBox="0 0 24 24" className="h-10 w-10" fill="none" aria-hidden>
                         <path d="m5 12.5 4.5 4.5L19 7.5" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="5 3" />
                       </svg>
@@ -212,7 +212,7 @@ export function Contact() {
                     </p>
                     <button
                       onClick={() => setSent(false)}
-                      className="mt-8 border-2 border-marigold-500 px-7 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-marigold-400 transition-colors hover:bg-marigold-500 hover:text-pine-950"
+                      className="mt-8 border-2 border-bone-100 px-7 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-bone-100 transition-colors hover:bg-bone-100 hover:text-pine-950"
                     >
                       Send Another Enquiry
                     </button>
@@ -237,7 +237,7 @@ export function Contact() {
                     setSent(true);
                   }}
                 >
-                  <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.28em] text-marigold-500">
+                  <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.28em] text-bone-100">
                     Submit Your Requirement · Auto-sends to WhatsApp
                   </p>
                   <h3 className="mt-2 font-display text-3xl uppercase leading-none text-bone-50">
@@ -272,7 +272,7 @@ export function Contact() {
 
                   <button
                     type="submit"
-                    className="group mt-7 flex w-full items-center justify-center gap-3 bg-marigold-500 py-4 font-mono text-[13px] font-bold uppercase tracking-[0.2em] text-pine-950 transition-all duration-300 hover:-translate-y-0.5 hover:bg-marigold-400 hover:shadow-[0_14px_36px_rgba(242,168,29,0.35)]"
+                    className="group mt-7 flex w-full items-center justify-center gap-3 bg-pine-900 py-4 font-mono text-[13px] font-bold uppercase tracking-[0.2em] text-bone-50 transition-all duration-300 hover:-translate-y-0.5 hover:bg-pine-800 hover:shadow-[0_14px_36px_rgba(0,0,0,0.3)]"
                   >
                     <WhatsAppGlyph className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
                     Send via WhatsApp

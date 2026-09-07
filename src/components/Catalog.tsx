@@ -35,7 +35,7 @@ function ProductCard({
             ))}
           </div>
           {product.featured && (
-            <span className="absolute bottom-3 right-3 bg-marigold-500 px-2.5 py-1 font-mono text-[9px] font-bold uppercase tracking-[0.18em] text-pine-950">
+            <span className="absolute bottom-3 right-3 bg-pine-900 px-2.5 py-1 font-mono text-[9px] font-bold uppercase tracking-[0.18em] text-bone-50">
               ★ Featured
             </span>
           )}
@@ -216,7 +216,7 @@ export function EnquiryModal({
       aria-label="Enquiry form"
     >
       <div
-        className="relative w-full max-w-md border-t-4 border-marigold-500 bg-bone-50 p-7 shadow-[0_40px_100px_rgba(0,0,0,0.5)] sm:p-9"
+        className="relative w-full max-w-md border-t-4 border-pine-700 bg-bone-50 p-7 shadow-[0_40px_100px_rgba(0,0,0,0.5)] sm:p-9"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -231,12 +231,11 @@ export function EnquiryModal({
 
         {sent ? (
           <div className="py-6 text-center">
-            <span className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-fern-600/15 text-fern-600">
-              <svg viewBox="0 0 24 24" className="h-8 w-8" fill="none" aria-hidden>
-                <path d="m5 12.5 4.5 4.5L19 7.5" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="5 3" />
-              </svg>
-            </span>
-            <h3 className="mt-5 font-display text-2xl uppercase text-pine-900">Opening WhatsApp…</h3>
+              <span className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-pine-900/15 text-pine-900">
+                <svg viewBox="0 0 24 24" className="h-8 w-8" fill="none" aria-hidden>
+                  <path d="m5 12.5 4.5 4.5L19 7.5" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="5 3" />
+                </svg>
+              </span>            <h3 className="mt-5 font-display text-2xl uppercase text-pine-900">Opening WhatsApp…</h3>
             <p className="mt-2 text-sm leading-relaxed text-ink-soft">
               WhatsApp has opened with your enquiry{product ? ` for ${product.name}` : ""}{" "}
               addressed to +91 91304 56458 — press send and our team will call you back with the
@@ -251,7 +250,7 @@ export function EnquiryModal({
           </div>
         ) : (
           <>
-            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.28em] text-fern-600">
+            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.28em] text-pine-700">
               Enquire Now
             </p>
             <h3 className="mt-2 font-display text-3xl uppercase leading-none text-pine-900">
@@ -301,7 +300,7 @@ export function EnquiryModal({
               />
               <button
                 type="submit"
-                className="flex w-full items-center justify-center gap-2.5 bg-marigold-500 py-4 font-mono text-[12px] font-bold uppercase tracking-[0.2em] text-pine-950 transition-all duration-300 hover:-translate-y-0.5 hover:bg-marigold-400 hover:shadow-[0_12px_30px_rgba(242,168,29,0.4)]"
+                className="flex w-full items-center justify-center gap-2.5 bg-pine-900 py-4 font-mono text-[12px] font-bold uppercase tracking-[0.2em] text-bone-50 transition-all duration-300 hover:-translate-y-0.5 hover:bg-pine-800 hover:shadow-[0_12px_30px_rgba(0,0,0,0.3)]"
               >
                 <WhatsAppGlyph className="h-4.5 w-4.5" />
                 Send via WhatsApp

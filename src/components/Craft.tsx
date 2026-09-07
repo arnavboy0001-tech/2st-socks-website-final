@@ -39,7 +39,7 @@ export function Customisation() {
 
             <Reveal delay={300}>
               <div className="mt-12 flex items-center gap-5 border border-pine-700 bg-pine-900/60 p-5">
-                <span className="grid h-14 w-14 shrink-0 place-items-center bg-marigold-500 text-pine-950">
+                <span className="grid h-14 w-14 shrink-0 place-items-center bg-bone-50 text-pine-950">
                   <SockGlyph className="h-8 w-8" />
                 </span>
                 <div>
@@ -64,7 +64,7 @@ export function Customisation() {
                   {s.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-bone-100/70">{s.body}</p>
-                <span className="absolute right-6 top-6 h-2 w-2 rounded-full bg-marigold-500 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <span className="absolute right-6 top-6 h-2 w-2 rounded-full bg-bone-50 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               </Reveal>
             ))}
           </ol>
@@ -88,9 +88,8 @@ export function ProductionUnit() {
       <div className="mx-auto max-w-7xl px-6 py-24 lg:py-32">
         <div className="grid items-center gap-14 lg:grid-cols-[1.2fr_1fr]">
           <Reveal>
-            <div className="relative">
-              <div className="absolute -right-4 -top-4 h-full w-full bg-marigold-500/60" />
-              <div className="relative overflow-hidden shadow-[0_25px_60px_rgba(16,32,26,0.3)]">
+              <div className="relative">
+              <div className="absolute -right-4 -top-4 h-full w-full bg-pine-200/60" />              <div className="relative overflow-hidden shadow-[0_25px_60px_rgba(16,32,26,0.3)]">
                 <SmartImg
                   src={IMAGES.factory}
                   alt="Rows of computerised sock knitting machines at the Ammvi production unit"
@@ -102,7 +101,7 @@ export function ProductionUnit() {
                     Uran Islampur Unit · Sangli
                   </span>
                   <span className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-bone-100/70">
-                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-marigold-500" />
+                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-bone-50" />
                     Machines running
                   </span>
                 </div>

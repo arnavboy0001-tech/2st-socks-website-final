@@ -75,7 +75,7 @@ export function Nav() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-3.5">
         <a href="#home" className="group flex items-center gap-3">
-          <span className="grid h-11 w-11 place-items-center bg-marigold-500 text-pine-950 transition-transform duration-300 group-hover:-rotate-6">
+          <span className="grid h-11 w-11 place-items-center bg-bone-50 text-pine-950 transition-transform duration-300 group-hover:-rotate-6">
             <SockGlyph className="h-7 w-7" />
           </span>
           <span className="leading-none">
@@ -104,7 +104,7 @@ export function Nav() {
         <div className="flex items-center gap-3">
           <a
             href="#contact"
-            className="hidden items-center gap-2 bg-marigold-500 px-5 py-2.5 font-mono text-[12px] font-semibold uppercase tracking-[0.18em] text-pine-950 transition-all duration-300 hover:-translate-y-0.5 hover:bg-marigold-400 hover:shadow-[0_10px_30px_rgba(242,168,29,0.35)] sm:flex"
+            className="hidden items-center gap-2 bg-bone-50 px-5 py-2.5 font-mono text-[12px] font-semibold uppercase tracking-[0.18em] text-pine-950 transition-all duration-300 hover:-translate-y-0.5 hover:bg-bone-200 hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)] sm:flex"
           >
             Get a Quote
           </a>
@@ -148,9 +148,9 @@ export function Nav() {
 /* ------------------------------ product ticker ------------------------------ */
 export function Ticker({ tone = "marigold" }: { tone?: "marigold" | "pine" }) {
   const items = [...TICKER_ITEMS, ...TICKER_ITEMS];
-  const bg = tone === "marigold" ? "bg-marigold-500 text-pine-950" : "bg-pine-900 text-marigold-400";
+  const bg = tone === "marigold" ? "bg-pine-900 text-bone-50" : "bg-bone-100 text-pine-900";
   return (
-    <div className={`overflow-hidden border-y-2 border-pine-950/80 ${bg}`} aria-hidden>
+    <div className={`overflow-hidden border-y-2 border-pine-950/20 ${bg}`} aria-hidden>
       <div className="marquee-track" style={{ ["--marquee-speed" as never]: "38s" }}>
         {items.map((item, i) => (
           <span
@@ -193,12 +193,12 @@ export function WhatsAppFloat() {
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="knit-dark relative overflow-hidden border-t-4 border-marigold-500 text-bone-100">
+    <footer className="knit-dark relative overflow-hidden border-t-4 border-pine-700 text-bone-100">
       <div className="mx-auto max-w-7xl px-6 pb-10 pt-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div>
             <a href="#home" className="flex items-center gap-3">
-              <span className="grid h-11 w-11 place-items-center bg-marigold-500 text-pine-950">
+              <span className="grid h-11 w-11 place-items-center bg-bone-50 text-pine-950">
                 <SockGlyph className="h-7 w-7" />
               </span>
               <span className="leading-none">

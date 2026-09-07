@@ -13,7 +13,7 @@ function RotatingWord() {
     return () => clearInterval(t);
   }, []);
   return (
-    <span className="relative inline-block h-[1em] overflow-hidden align-bottom text-marigold-500">
+    <span className="relative inline-block h-[1em] overflow-hidden align-bottom text-bone-100">
       {ROTATING.map((w, idx) => (
         <span
           key={w}
@@ -75,7 +75,7 @@ export function Hero() {
         <div>
           <Reveal>
             <p className="mb-6 inline-flex items-center gap-3 border border-pine-600 bg-pine-900/70 px-4 py-2 font-mono text-[11px] uppercase tracking-[0.28em] text-fern-300">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-marigold-500" />
+              <span className="h-2 w-2 animate-pulse rounded-full bg-bone-50" />
               Est. {COMPANY.established} · Ichalkaranji, Maharashtra
             </p>
           </Reveal>
@@ -113,7 +113,7 @@ export function Hero() {
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <a
                 href="#catalog"
-                className="group flex items-center gap-3 bg-marigold-500 px-7 py-4 font-mono text-[13px] font-semibold uppercase tracking-[0.18em] text-pine-950 transition-all duration-300 hover:-translate-y-1 hover:bg-marigold-400 hover:shadow-[0_16px_40px_rgba(242,168,29,0.4)]"
+                className="group flex items-center gap-3 bg-bone-50 px-7 py-4 font-mono text-[13px] font-semibold uppercase tracking-[0.18em] text-pine-950 transition-all duration-300 hover:-translate-y-1 hover:bg-bone-200 hover:shadow-[0_16px_40px_rgba(255,255,255,0.15)]"
               >
                 Browse Catalog
                 <ArrowGlyph className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
@@ -188,7 +188,7 @@ export function Hero() {
                 <defs>
                   <path id="badge-circle" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0" />
                 </defs>
-                <circle cx="60" cy="60" r="59" className="fill-marigold-500" />
+                <circle cx="60" cy="60" r="59" className="fill-bone-50" />
                 <circle cx="60" cy="60" r="34" fill="none" stroke="#0e2a21" strokeWidth="1.5" strokeDasharray="5 4" />
                 <text className="fill-pine-950 font-mono text-[10.5px] font-semibold uppercase" style={{ letterSpacing: "2.5px" }}>
                   <textPath href="#badge-circle">
