@@ -16,7 +16,7 @@ function ProductCard({
 }) {
   return (
     <Reveal delay={(index % 4) * 80} className="h-full">
-      <article className="group flex h-full flex-col border border-bone-300 bg-bone-50 transition-all duration-500 hover:-translate-y-2 hover:border-pine-800 hover:shadow-[0_24px_50px_rgba(16,32,26,0.18)]">
+      <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-bone-200 bg-bone-50 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-fern-600/30 hover:shadow-2xl hover:shadow-fern-600/10">
         <div className="relative overflow-hidden bg-pine-800">
           <SmartImg
             src={product.image}
@@ -28,32 +28,32 @@ function ProductCard({
             {product.tags.map((t) => (
               <span
                 key={t}
-                className="bg-pine-950/85 px-2.5 py-1 font-mono text-[9px] font-semibold uppercase tracking-[0.18em] text-marigold-400"
+                className="rounded-full bg-pine-950/85 px-3 py-1 font-mono text-[9px] font-semibold uppercase tracking-[0.18em] text-marigold-400 backdrop-blur-sm"
               >
                 {t}
               </span>
             ))}
           </div>
           {product.featured && (
-            <span className="absolute bottom-3 right-3 bg-pine-900 px-2.5 py-1 font-mono text-[9px] font-bold uppercase tracking-[0.18em] text-bone-50">
+            <span className="absolute bottom-3 right-3 rounded-full bg-fern-600 px-3 py-1 font-mono text-[9px] font-bold uppercase tracking-[0.18em] text-bone-50 shadow-lg">
               ★ Featured
             </span>
           )}
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-pine-950/40 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
         </div>
 
-        <div className="flex flex-1 flex-col p-5">
+        <div className="flex flex-1 flex-col p-6">
           <h3 className="font-display text-xl uppercase leading-tight tracking-wide text-pine-900 transition-colors group-hover:text-fern-600">
             {product.name}
           </h3>
-          <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-soft">{product.blurb}</p>
-          <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.2em] text-fern-600">
+          <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-soft">{product.blurb}</p>
+          <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.2em] text-fern-600">
             Fabric · {product.fabric}
           </p>
-          <div className="mt-4 flex items-center gap-3 border-t border-dashed border-bone-300 pt-4">
+          <div className="mt-5 flex items-center gap-3 border-t border-dashed border-bone-300 pt-4">
             <button
               onClick={() => onEnquire(product)}
-              className="flex flex-1 items-center justify-center gap-2 bg-pine-900 px-4 py-2.5 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-bone-50 transition-all duration-300 hover:bg-fern-600"
+              className="flex flex-1 items-center justify-center gap-2 rounded-full bg-pine-900 px-4 py-2.5 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-bone-50 transition-all duration-300 hover:bg-fern-600 hover:shadow-lg hover:shadow-fern-600/30"
             >
               Enquire Now
               <ArrowGlyph className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -113,9 +113,9 @@ export function Catalog({ onEnquire }: { onEnquire: EnquiryFn }) {
                 <button
                   key={c}
                   onClick={() => setActive(c)}
-                  className={`px-4 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] transition-all duration-300 ${
+                  className={`rounded-full px-5 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] transition-all duration-300 ${
                     active === c
-                      ? "bg-pine-900 text-marigold-400 shadow-[0_8px_20px_rgba(14,42,33,0.3)]"
+                      ? "bg-gradient-to-r from-fern-600 to-fern-500 text-bone-50 shadow-lg shadow-fern-600/30"
                       : "border border-bone-300 bg-bone-100 text-ink-soft hover:border-fern-600 hover:text-fern-600"
                   }`}
                 >
@@ -137,7 +137,7 @@ export function Catalog({ onEnquire }: { onEnquire: EnquiryFn }) {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search the range…"
-                className="field pl-10"
+                className="field rounded-full pl-10"
               />
             </label>
           </div>
@@ -216,7 +216,7 @@ export function EnquiryModal({
       aria-label="Enquiry form"
     >
       <div
-        className="relative w-full max-w-md border-t-4 border-pine-700 bg-bone-50 p-7 shadow-[0_40px_100px_rgba(0,0,0,0.5)] sm:p-9"
+        className="relative w-full max-w-md overflow-hidden rounded-3xl border-t-4 border-fern-600 bg-bone-50 p-7 shadow-2xl shadow-fern-600/20 sm:p-9"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -300,7 +300,7 @@ export function EnquiryModal({
               />
               <button
                 type="submit"
-                className="flex w-full items-center justify-center gap-2.5 bg-pine-900 py-4 font-mono text-[12px] font-bold uppercase tracking-[0.2em] text-bone-50 transition-all duration-300 hover:-translate-y-0.5 hover:bg-pine-800 hover:shadow-[0_12px_30px_rgba(0,0,0,0.3)]"
+                className="flex w-full items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-fern-600 to-fern-500 py-4 font-mono text-[12px] font-bold uppercase tracking-[0.2em] text-bone-50 shadow-lg shadow-fern-600/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-fern-600/40"
               >
                 <WhatsAppGlyph className="h-4.5 w-4.5" />
                 Send via WhatsApp

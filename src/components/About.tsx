@@ -19,14 +19,14 @@ import {
 /* ------------------------------ stats band ------------------------------ */
 export function StatsBand() {
   return (
-    <section className="relative z-10 bg-pine-900 text-bone-50">
-      <div className="mx-auto grid max-w-7xl grid-cols-2 divide-pine-700 px-6 py-10 sm:grid-cols-3 lg:grid-cols-5 lg:divide-x">
+    <section className="relative z-10 bg-gradient-to-r from-fern-600 via-fern-500 to-marigold-600 text-bone-50">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 divide-bone-50/20 px-6 py-12 sm:grid-cols-3 lg:grid-cols-5 lg:divide-x">
         {STATS.map((s, i) => (
           <Reveal key={s.label} delay={i * 90} className="px-4 py-4 text-center first:pl-0 lg:text-left">
-            <p className="font-display text-4xl leading-none tracking-tight sm:text-5xl">
+            <p className="font-display text-5xl leading-none tracking-tight sm:text-6xl">
               <CountUp to={s.value} suffix={s.suffix} isYear={s.isYear} />
             </p>
-            <p className="mt-2 font-mono text-[11px] font-semibold uppercase tracking-[0.22em]">
+            <p className="mt-3 font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-bone-50/90">
               {s.label}
             </p>
           </Reveal>

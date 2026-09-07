@@ -46,7 +46,7 @@ export function Testimonials() {
         <div className="mt-12 columns-1 gap-5 sm:columns-2 lg:columns-3 [&>article]:mb-5 [&>article]:break-inside-avoid">
           {TESTIMONIALS.map((t, i) => (
             <Reveal as="article" key={t.name} delay={(i % 3) * 110}>
-              <div className="group border border-pine-700 bg-pine-950/70 p-6 transition-all duration-500 hover:-translate-y-1.5 hover:border-marigold-600 hover:bg-pine-950">
+              <div className="group rounded-2xl border border-pine-700/50 bg-pine-950/70 p-6 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1.5 hover:border-marigold-500/50 hover:bg-pine-950 hover:shadow-xl hover:shadow-marigold-500/10">
                 <QuoteMark className="h-7 w-7 text-marigold-500/70 transition-colors group-hover:text-marigold-400" />
                 <p className="mt-4 text-sm leading-relaxed text-bone-100/85">“{t.quote}”</p>
                 <div className="mt-5 flex items-center gap-3 border-t border-dashed border-pine-700 pt-4">
@@ -156,9 +156,9 @@ export function Contact() {
                       href={c.href}
                       target={c.external ? "_blank" : undefined}
                       rel={c.external ? "noreferrer" : undefined}
-                      className="group flex items-start gap-4 border border-bone-300 bg-bone-50 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-pine-800 hover:shadow-[0_16px_36px_rgba(16,32,26,0.14)]"
+                      className="group flex items-start gap-4 rounded-2xl border border-bone-300 bg-bone-50 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-fern-600 hover:shadow-xl hover:shadow-fern-600/10"
                     >
-                      <span className="grid h-11 w-11 shrink-0 place-items-center bg-pine-900 text-marigold-400 transition-colors duration-300 group-hover:bg-marigold-500 group-hover:text-pine-950">
+                      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-pine-900 text-marigold-400 transition-colors duration-300 group-hover:bg-fern-600 group-hover:text-bone-50">
                         <c.icon className="h-5 w-5" />
                       </span>
                       <span>
@@ -172,8 +172,8 @@ export function Contact() {
                       </span>
                     </a>
                   ) : (
-                    <div className="flex items-start gap-4 border border-bone-300 bg-bone-50 p-5">
-                      <span className="grid h-11 w-11 shrink-0 place-items-center bg-pine-900 text-marigold-400">
+                    <div className="flex items-start gap-4 rounded-2xl border border-bone-300 bg-bone-50 p-5">
+                      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-pine-900 text-marigold-400">
                         <c.icon className="h-5 w-5" />
                       </span>
                       <span>
@@ -193,7 +193,7 @@ export function Contact() {
 
           {/* right — the form */}
           <Reveal delay={200}>
-            <div className="relative border-t-4 border-pine-700 bg-pine-950 p-8 text-bone-100 shadow-[0_30px_70px_rgba(0,0,0,0.35)] sm:p-10">
+            <div className="relative overflow-hidden rounded-3xl border-t-4 border-fern-600 bg-gradient-to-br from-pine-950 to-pine-900 p-8 text-bone-100 shadow-2xl shadow-fern-600/20 sm:p-10">
               {sent ? (
                 <div className="grid min-h-[480px] place-items-center text-center">
                   <div>
@@ -272,7 +272,7 @@ export function Contact() {
 
                   <button
                     type="submit"
-                    className="group mt-7 flex w-full items-center justify-center gap-3 bg-pine-900 py-4 font-mono text-[13px] font-bold uppercase tracking-[0.2em] text-bone-50 transition-all duration-300 hover:-translate-y-0.5 hover:bg-pine-800 hover:shadow-[0_14px_36px_rgba(0,0,0,0.3)]"
+                    className="group mt-7 flex w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-fern-600 to-fern-500 py-4 font-mono text-[13px] font-bold uppercase tracking-[0.2em] text-bone-50 shadow-lg shadow-fern-600/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-fern-600/40"
                   >
                     <WhatsAppGlyph className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
                     Send via WhatsApp

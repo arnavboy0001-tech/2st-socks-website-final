@@ -65,17 +65,17 @@ function CollageCard({
 export function Hero() {
   const byId = (id: string) => PRODUCTS.find((p) => p.id === id)!;
   return (
-    <section id="home" className="knit-dark relative overflow-hidden text-bone-100">
+    <section id="home" className="relative overflow-hidden bg-gradient-to-br from-pine-950 via-pine-900 to-pine-950 text-bone-100">
       {/* ambient glows */}
-      <div className="pointer-events-none absolute -left-40 top-10 h-[480px] w-[480px] rounded-full bg-fern-600/25 blur-[130px]" />
-      <div className="pointer-events-none absolute -right-32 bottom-0 h-[420px] w-[420px] rounded-full bg-marigold-600/20 blur-[120px]" />
+      <div className="pointer-events-none absolute -left-40 top-10 h-[480px] w-[480px] rounded-full bg-fern-600/20 blur-[130px]" />
+      <div className="pointer-events-none absolute -right-32 bottom-0 h-[420px] w-[420px] rounded-full bg-marigold-500/15 blur-[120px]" />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 pb-20 pt-14 lg:grid-cols-[1.05fr_0.95fr] lg:pb-28 lg:pt-20">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 pb-24 pt-16 lg:grid-cols-[1.1fr_0.9fr] lg:pb-32 lg:pt-24">
         {/* left — the poster */}
         <div>
           <Reveal>
-            <p className="mb-6 inline-flex items-center gap-3 border border-pine-600 bg-pine-900/70 px-4 py-2 font-mono text-[11px] uppercase tracking-[0.28em] text-fern-300">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-bone-50" />
+            <p className="mb-8 inline-flex items-center gap-3 rounded-full border border-fern-600/30 bg-pine-900/50 px-5 py-2.5 font-mono text-[11px] uppercase tracking-[0.28em] text-fern-300 backdrop-blur-sm">
+              <span className="h-2 w-2 animate-pulse rounded-full bg-fern-500" />
               Est. {COMPANY.established} · Ichalkaranji, Maharashtra
             </p>
           </Reveal>
@@ -110,17 +110,17 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={460}>
-            <div className="mt-9 flex flex-wrap items-center gap-4">
+            <div className="mt-10 flex flex-wrap items-center gap-4">
               <a
                 href="#catalog"
-                className="group flex items-center gap-3 bg-bone-50 px-7 py-4 font-mono text-[13px] font-semibold uppercase tracking-[0.18em] text-pine-950 transition-all duration-300 hover:-translate-y-1 hover:bg-bone-200 hover:shadow-[0_16px_40px_rgba(255,255,255,0.15)]"
+                className="group flex items-center gap-3 rounded-full bg-fern-600 px-8 py-4 font-mono text-[13px] font-semibold uppercase tracking-[0.18em] text-bone-50 shadow-lg shadow-fern-600/30 transition-all duration-300 hover:-translate-y-1 hover:bg-fern-500 hover:shadow-xl hover:shadow-fern-600/40"
               >
                 Browse Catalog
                 <ArrowGlyph className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
               </a>
               <a
                 href="#contact"
-                className="flex items-center gap-3 border-2 border-pine-600 px-7 py-[14px] font-mono text-[13px] font-semibold uppercase tracking-[0.18em] text-bone-100 transition-all duration-300 hover:border-marigold-500 hover:text-marigold-400"
+                className="flex items-center gap-3 rounded-full border-2 border-bone-100/30 px-8 py-[14px] font-mono text-[13px] font-semibold uppercase tracking-[0.18em] text-bone-100 backdrop-blur-sm transition-all duration-300 hover:border-marigold-400 hover:bg-marigold-400/10 hover:text-marigold-300"
               >
                 Get Instant Quote
               </a>

@@ -73,16 +73,16 @@ export function Nav() {
         scrolled ? "nav-scrolled" : "bg-pine-950/60"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-3.5">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4">
         <a href="#home" className="group flex items-center gap-3">
-          <span className="grid h-11 w-11 place-items-center bg-bone-50 text-pine-950 transition-transform duration-300 group-hover:-rotate-6">
+          <span className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-fern-600 to-fern-500 text-bone-50 shadow-lg shadow-fern-600/30 transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl group-hover:shadow-fern-600/40">
             <SockGlyph className="h-7 w-7" />
           </span>
           <span className="leading-none">
             <span className="block font-display text-xl uppercase tracking-wide text-bone-50">
               Ammvi
             </span>
-            <span className="block font-mono text-[10px] uppercase tracking-[0.28em] text-marigold-500">
+            <span className="block font-mono text-[10px] uppercase tracking-[0.28em] text-marigold-400">
               Knits &amp; Hosiery
             </span>
           </span>
@@ -104,7 +104,7 @@ export function Nav() {
         <div className="flex items-center gap-3">
           <a
             href="#contact"
-            className="hidden items-center gap-2 bg-bone-50 px-5 py-2.5 font-mono text-[12px] font-semibold uppercase tracking-[0.18em] text-pine-950 transition-all duration-300 hover:-translate-y-0.5 hover:bg-bone-200 hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)] sm:flex"
+            className="hidden items-center gap-2 rounded-full bg-marigold-500 px-6 py-2.5 font-mono text-[12px] font-semibold uppercase tracking-[0.18em] text-pine-950 shadow-lg shadow-marigold-500/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-marigold-400 hover:shadow-xl hover:shadow-marigold-500/40 sm:flex"
           >
             Get a Quote
           </a>
@@ -193,17 +193,17 @@ export function WhatsAppFloat() {
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="knit-dark relative overflow-hidden border-t-4 border-pine-700 text-bone-100">
+    <footer className="knit-dark relative overflow-hidden border-t-4 border-fern-600 text-bone-100">
       <div className="mx-auto max-w-7xl px-6 pb-10 pt-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div>
             <a href="#home" className="flex items-center gap-3">
-              <span className="grid h-11 w-11 place-items-center bg-bone-50 text-pine-950">
+              <span className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-fern-600 to-fern-500 text-bone-50 shadow-lg shadow-fern-600/30">
                 <SockGlyph className="h-7 w-7" />
               </span>
               <span className="leading-none">
                 <span className="block font-display text-2xl uppercase text-bone-50">Ammvi</span>
-                <span className="block font-mono text-[10px] uppercase tracking-[0.28em] text-marigold-500">
+                <span className="block font-mono text-[10px] uppercase tracking-[0.28em] text-marigold-400">
                   Knits &amp; Hosiery
                 </span>
               </span>

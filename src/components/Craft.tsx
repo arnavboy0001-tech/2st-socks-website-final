@@ -30,7 +30,7 @@ export function Customisation() {
             <Reveal delay={230}>
               <a
                 href="#contact"
-                className="group mt-9 inline-flex items-center gap-3 border-2 border-marigold-500 px-7 py-4 font-mono text-[12px] font-semibold uppercase tracking-[0.18em] text-marigold-400 transition-all duration-300 hover:bg-marigold-500 hover:text-pine-950"
+                className="group mt-9 inline-flex items-center gap-3 rounded-full border-2 border-marigold-400 px-8 py-4 font-mono text-[12px] font-semibold uppercase tracking-[0.18em] text-marigold-400 transition-all duration-300 hover:bg-marigold-500 hover:text-pine-950 hover:shadow-lg hover:shadow-marigold-500/30"
               >
                 Start a Custom Order
                 <ArrowGlyph className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
@@ -54,17 +54,17 @@ export function Customisation() {
             </Reveal>
           </div>
 
-          <ol className="grid gap-px border border-pine-700 bg-pine-700 sm:grid-cols-2">
+          <ol className="grid gap-4 sm:grid-cols-2">
             {CUSTOM_PROCESS.map((s, i) => (
-              <Reveal as="li" key={s.step} delay={i * 120} className="group relative bg-pine-950 p-8 transition-colors duration-500 hover:bg-pine-900">
-                <p className="font-display text-6xl text-pine-700 transition-colors duration-500 group-hover:text-fern-600">
+              <Reveal as="li" key={s.step} delay={i * 120} className="group relative overflow-hidden rounded-2xl border border-pine-700/50 bg-pine-950/80 p-8 backdrop-blur-sm transition-all duration-500 hover:border-fern-600/50 hover:bg-pine-900/80 hover:shadow-xl hover:shadow-fern-600/10">
+                <p className="font-display text-6xl text-pine-700 transition-colors duration-500 group-hover:text-fern-500">
                   {s.step}
                 </p>
                 <h3 className="mt-4 font-display text-2xl uppercase tracking-wide text-bone-50">
                   {s.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-bone-100/70">{s.body}</p>
-                <span className="absolute right-6 top-6 h-2 w-2 rounded-full bg-bone-50 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <span className="absolute right-6 top-6 h-2 w-2 rounded-full bg-fern-500 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               </Reveal>
             ))}
           </ol>
