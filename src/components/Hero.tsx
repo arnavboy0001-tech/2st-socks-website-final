@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { COMPANY, IMAGES, PRODUCTS } from "../data/catalog";
 import { ArrowGlyph, Reveal, SmartImg, SockGlyph } from "./Shared";
+import { Interactive3DSock } from "./Interactive3DSock";
 
 const ROTATING = ["Socks", "Stockings", "Sleeves", "Supports", "Knits"];
 
@@ -69,6 +70,11 @@ export function Hero() {
       {/* ambient glows */}
       <div className="pointer-events-none absolute -left-40 top-10 h-[480px] w-[480px] rounded-full bg-fern-600/20 blur-[130px]" />
       <div className="pointer-events-none absolute -right-32 bottom-0 h-[420px] w-[420px] rounded-full bg-marigold-500/15 blur-[120px]" />
+
+      {/* Interactive 3D Sock Background */}
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-end pr-10 opacity-60 lg:pr-20">
+        <Interactive3DSock />
+      </div>
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 pb-24 pt-16 lg:grid-cols-[1.1fr_0.9fr] lg:pb-32 lg:pt-24">
         {/* left — the poster */}
