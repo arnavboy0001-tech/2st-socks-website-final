@@ -1,0 +1,220 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Anton", "Archivo", sans-serif;
+  --font-body: "Archivo", "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+
+  --color-pine-950: #1c1917;
+  --color-pine-900: #292524;
+  --color-pine-800: #44403c;
+  --color-pine-700: #57534e;
+  --color-pine-600: #78716c;
+
+  --color-fern-600: #c2410c;
+  --color-fern-500: #ea580c;
+  --color-fern-300: #fdba74;
+
+  --color-marigold-300: #fef3c7;
+  --color-marigold-400: #fbbf24;
+  --color-marigold-500: #f59e0b;
+  --color-marigold-600: #d97706;
+  --color-marigold-700: #b45309;
+
+  --color-bone-50: #fafaf9;
+  --color-bone-100: #f5f5f4;
+  --color-bone-200: #e7e5e4;
+  --color-bone-300: #d6d3d1;
+
+  --color-ink: #292524;
+  --color-ink-soft: #57534e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bone-100);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-fern-500);
+  color: var(--color-bone-50);
+}
+
+/* ---------- knit chevron texture ---------- */
+.knit-dark {
+  background-color: var(--color-pine-950);
+  background-image: url("data:image/svg+xml,%3Csvg width='56' height='28' viewBox='0 0 56 28' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 14 L14 0 L28 14 L42 0 L56 14' fill='none' stroke='%23292524' stroke-width='3'/%3E%3Cpath d='M0 28 L14 14 L28 28 L42 14 L56 28' fill='none' stroke='%23292524' stroke-width='3'/%3E%3C/svg%3E");
+  background-size: 56px 28px;
+}
+.knit-light {
+  background-color: var(--color-bone-100);
+  background-image: url("data:image/svg+xml,%3Csvg width='56' height='28' viewBox='0 0 56 28' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 14 L14 0 L28 14 L42 0 L56 14' fill='none' stroke='%23e7e5e4' stroke-width='3'/%3E%3Cpath d='M0 28 L14 14 L28 28 L42 14 L56 28' fill='none' stroke='%23e7e5e4' stroke-width='3'/%3E%3C/svg%3E");
+  background-size: 56px 28px;
+}
+.knit-band {
+  background-image: url("data:image/svg+xml,%3Csvg width='56' height='28' viewBox='0 0 56 28' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 14 L14 0 L28 14 L42 0 L56 14' fill='none' stroke='%23c2410c' stroke-width='3'/%3E%3Cpath d='M0 28 L14 14 L28 28 L42 14 L56 28' fill='none' stroke='%23c2410c' stroke-width='3'/%3E%3C/svg%3E");
+  background-size: 56px 28px;
+}
+
+/* ---------- stitches / dashed rule ---------- */
+.stitch-rule {
+  background-image: repeating-linear-gradient(
+    90deg,
+    currentColor 0 10px,
+    transparent 10px 18px
+  );
+  height: 2px;
+  opacity: 0.45;
+}
+
+/* ---------- marquee ---------- */
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-x var(--marquee-speed, 34s) linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+
+/* ---------- slow zoom ---------- */
+@keyframes ken-burns {
+  0%   { transform: scale(1) translate(0, 0); }
+  50%  { transform: scale(1.08) translate(1.5%, -1.5%); }
+  100% { transform: scale(1) translate(0, 0); }
+}
+.ken-burns { animation: ken-burns 22s ease-in-out infinite; will-change: transform; }
+
+/* ---------- rotating badge ---------- */
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+.spin-slow { animation: spin-slow 22s linear infinite; }
+
+/* ---------- gentle float for collage cards ---------- */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+.float-y { animation: float-y 7s ease-in-out infinite; }
+
+/* ---------- scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* line-mask headline reveal */
+.line-mask { overflow: hidden; display: block; }
+.line-mask > span {
+  display: block;
+  transform: translateY(110%);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.is-in .line-mask > span,
+.line-mask.is-in > span { transform: translateY(0); }
+
+/* ---------- yarn underline on hover ---------- */
+.yarn-link { position: relative; }
+.yarn-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px;
+  width: 100%;
+  background: var(--color-fern-600);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.yarn-link:hover::after { transform: scaleX(1); transform-origin: left; }
+
+/* ---------- product card image zoom ---------- */
+.img-zoom { transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+.group:hover .img-zoom { transform: scale(1.06) rotate(-0.5deg); }
+
+/* ---------- pulsing whatsapp dot ---------- */
+@keyframes ping-soft {
+  0%   { transform: scale(1); opacity: 0.7; }
+  80%, 100% { transform: scale(1.9); opacity: 0; }
+}
+.ping-soft { animation: ping-soft 2s cubic-bezier(0, 0, 0.2, 1) infinite; }
+
+/* ---------- nav shadow on scroll ---------- */
+.nav-scrolled {
+  background: rgba(28, 25, 23, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- custom scrollbar (subtle) ---------- */
+::-webkit-scrollbar { width: 11px; }
+::-webkit-scrollbar-track { background: var(--color-pine-950); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-pine-600);
+  border-radius: 8px;
+  border: 2px solid var(--color-pine-950);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-fern-600); }
+
+/* ---------- count-up stat ---------- */
+.stat-num { font-variant-numeric: tabular-nums; }
+
+/* ---------- form fields ---------- */
+.field {
+  width: 100%;
+  border: 1.5px solid var(--color-bone-300);
+  background: var(--color-bone-50);
+  padding: 0.7rem 0.9rem;
+  font-size: 0.95rem;
+  color: var(--color-ink);
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.field:focus {
+  border-color: var(--color-fern-600);
+  box-shadow: 0 0 0 3px rgba(194, 65, 12, 0.18);
+}
+.field-dark {
+  border-color: var(--color-pine-600);
+  background: var(--color-pine-900);
+  color: var(--color-bone-50);
+}
+.field-dark::placeholder { color: #a8a29e; }
+.field-dark:focus {
+  border-color: var(--color-marigold-400);
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.25);
+}
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .marquee-track,
+  .ken-burns,
+  .spin-slow,
+  .float-y,
+  .ping-soft { animation: none !important; }
+  .reveal,
+  .line-mask > span {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
