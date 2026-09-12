@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { COMPANY, IMAGES, PRODUCTS } from "../data/catalog";
 import { ArrowGlyph, Reveal, SmartImg, SockGlyph } from "./Shared";
 import KineticGrid from "./ui/kinetic-grid";
+import { LiquidMetalButton } from "./ui/liquid-metal-button";
 
 const ROTATING = ["Socks", "Stockings", "Sleeves", "Supports", "Knits"];
 
@@ -126,12 +127,15 @@ export function Hero() {
                 Browse Catalog
                 <ArrowGlyph className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
               </a>
-              <a
-                href="#contact"
-                className="flex items-center gap-3 rounded-full border-2 border-bone-100/30 px-8 py-[14px] font-mono text-[13px] font-semibold uppercase tracking-[0.18em] text-bone-100 backdrop-blur-sm transition-all duration-300 hover:border-marigold-400 hover:bg-marigold-400/10 hover:text-marigold-300"
-              >
-                Get Instant Quote
-              </a>
+              <LiquidMetalButton
+                label="Get Instant Quote"
+                onClick={() => {
+                  const contactSection = document.getElementById("contact");
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+              />
             </div>
           </Reveal>
 
