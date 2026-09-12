@@ -8,6 +8,7 @@ import {
   SockGlyph,
   WhatsAppGlyph,
 } from "./Shared";
+import { LiquidMetalButton } from "./ui/liquid-metal-button";
 
 /* ------------------------------ top bar ------------------------------ */
 export function TopBar() {
@@ -102,12 +103,13 @@ export function Nav() {
         </ul>
 
         <div className="flex items-center gap-3">
-          <a
-            href="#contact"
-            className="hidden items-center gap-2 rounded-full bg-marigold-500 px-6 py-2.5 font-mono text-[12px] font-semibold uppercase tracking-[0.18em] text-pine-950 shadow-lg shadow-marigold-500/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-marigold-400 hover:shadow-xl hover:shadow-marigold-500/40 sm:flex"
-          >
-            Get a Quote
-          </a>
+          <div className="hidden sm:flex">
+            <LiquidMetalButton
+              label="Get a Quote"
+              href="#contact"
+              size="sm"
+            />
+          </div>
           <button
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"

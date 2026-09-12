@@ -1,5 +1,6 @@
 import { COMPANY, CUSTOM_PROCESS, IMAGES } from "../data/catalog";
 import { ArrowGlyph, Reveal, SectionHead, SmartImg, SockGlyph } from "./Shared";
+import { LiquidMetalButton } from "./ui/liquid-metal-button";
 
 /* ------------------------------ customisation ------------------------------ */
 export function Customisation() {
@@ -28,13 +29,13 @@ export function Customisation() {
               </p>
             </Reveal>
             <Reveal delay={230}>
-              <a
-                href="#contact"
-                className="group mt-9 inline-flex items-center gap-3 rounded-full border-2 border-marigold-400 px-8 py-4 font-mono text-[12px] font-semibold uppercase tracking-[0.18em] text-marigold-400 transition-all duration-300 hover:bg-marigold-500 hover:text-pine-950 hover:shadow-lg hover:shadow-marigold-500/30"
-              >
-                Start a Custom Order
-                <ArrowGlyph className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
-              </a>
+              <div className="mt-9">
+                <LiquidMetalButton
+                  label="Start a Custom Order"
+                  href="#contact"
+                  size="md"
+                />
+              </div>
             </Reveal>
 
             <Reveal delay={300}>

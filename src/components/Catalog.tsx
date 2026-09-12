@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { CATEGORIES, PRODUCTS, Product, sendOnWhatsApp } from "../data/catalog";
 import { ArrowGlyph, Reveal, SectionHead, SmartImg, WhatsAppGlyph } from "./Shared";
+import { LiquidMetalButton } from "./ui/liquid-metal-button";
 
 type EnquiryFn = (product?: Product) => void;
 
@@ -51,13 +52,12 @@ function ProductCard({
             Fabric · {product.fabric}
           </p>
           <div className="mt-5 flex items-center gap-3 border-t border-dashed border-bone-300 pt-4">
-            <button
+            <LiquidMetalButton
+              label="Enquire Now"
               onClick={() => onEnquire(product)}
-              className="flex flex-1 items-center justify-center gap-2 rounded-full bg-pine-900 px-4 py-2.5 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-bone-50 transition-all duration-300 hover:bg-fern-600 hover:shadow-lg hover:shadow-fern-600/30"
-            >
-              Enquire Now
-              <ArrowGlyph className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-            </button>
+              size="sm"
+              className="w-full"
+            />
           </div>
         </div>
       </article>
@@ -298,13 +298,12 @@ export function EnquiryModal({
                 placeholder={`Quantity, colours, sizes… (optional)`}
                 className="field resize-none"
               />
-              <button
-                type="submit"
-                className="flex w-full items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-fern-600 to-fern-500 py-4 font-mono text-[12px] font-bold uppercase tracking-[0.2em] text-bone-50 shadow-lg shadow-fern-600/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-fern-600/40"
-              >
-                <WhatsAppGlyph className="h-4.5 w-4.5" />
-                Send via WhatsApp
-              </button>
+              <LiquidMetalButton
+                label="Send via WhatsApp"
+                viewMode="text"
+                size="md"
+                className="w-full"
+              />
               <p className="text-center font-mono text-[10px] uppercase tracking-[0.18em] text-ink-soft/70">
                 Auto-addressed to +91 91304 56458 with your details
               </p>

@@ -7,12 +7,18 @@ interface LiquidMetalButtonProps {
   label?: string;
   onClick?: () => void;
   viewMode?: "text" | "icon";
+  href?: string;
+  size?: "sm" | "md" | "lg";
+  className?: string;
 }
 
 export function LiquidMetalButton({
   label = "Get Started",
   onClick,
   viewMode = "text",
+  href,
+  size = "md",
+  className = "",
 }: LiquidMetalButtonProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [isPressed, setIsPressed] = useState(false);
@@ -26,26 +32,27 @@ export function LiquidMetalButton({
   const rippleId = useRef(0);
 
   const dimensions = useMemo(() => {
+    const sizeMap = {
+      sm: { width: 120, height: 38, innerWidth: 116, innerHeight: 34, shaderWidth: 120, shaderHeight: 38, fontSize: 12 },
+      md: { width: 160, height: 46, innerWidth: 156, innerHeight: 42, shaderWidth: 160, shaderHeight: 46, fontSize: 14 },
+      lg: { width: 200, height: 52, innerWidth: 196, innerHeight: 48, shaderWidth: 200, shaderHeight: 52, fontSize: 15 },
+    };
+    
     if (viewMode === "icon") {
+      const iconSize = size === "sm" ? 38 : size === "lg" ? 52 : 46;
       return {
-        width: 46,
-        height: 46,
-        innerWidth: 42,
-        innerHeight: 42,
-        shaderWidth: 46,
-        shaderHeight: 46,
+        width: iconSize,
+        height: iconSize,
+        innerWidth: iconSize - 4,
+        innerHeight: iconSize - 4,
+        shaderWidth: iconSize,
+        shaderHeight: iconSize,
+        fontSize: 14,
       };
     } else {
-      return {
-        width: 142,
-        height: 46,
-        innerWidth: 138,
-        innerHeight: 42,
-        shaderWidth: 142,
-        shaderHeight: 46,
-      };
+      return sizeMap[size];
     }
-  }, [viewMode]);
+  }, [viewMode, size]);
 
   useEffect(() => {
     const styleId = "shader-canvas-style-exploded";
@@ -157,7 +164,7 @@ export function LiquidMetalButton({
   };
 
   return (
-    <div className="relative inline-block">
+    <div className={`relative inline-block ${className}`}>
       <div
         style={{
           perspective: "1000px",
@@ -208,13 +215,15 @@ export function LiquidMetalButton({
             {viewMode === "text" && (
               <span
                 style={{
-                  fontSize: "14px",
+                  fontSize: `${dimensions.fontSize}px`,
                   color: "#666666",
-                  fontWeight: 400,
+                  fontWeight: 500,
                   textShadow: "0px 1px 2px rgba(0, 0, 0, 0.5)",
                   transition: "all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)",
                   transform: "scale(1)",
                   whiteSpace: "nowrap",
+                  letterSpacing: "0.05em",
+                  textTransform: "uppercase",
                 }}
               >
                 {label}
@@ -297,51 +306,102 @@ export function LiquidMetalButton({
             </div>
           </div>
 
-          <button
-            ref={buttonRef}
-            onClick={handleClick}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            onMouseDown={() => setIsPressed(true)}
-            onMouseUp={() => setIsPressed(false)}
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: `${dimensions.width}px`,
-              height: `${dimensions.height}px`,
-              background: "transparent",
-              border: "none",
-              cursor: "pointer",
-              outline: "none",
-              zIndex: 40,
-              transformStyle: "preserve-3d",
-              transform: "translateZ(25px)",
-              transition:
-                "all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), width 0.4s ease, height 0.4s ease",
-              overflow: "hidden",
-              borderRadius: "100px",
-            }}
-            aria-label={label}
-          >
-            {ripples.map((ripple) => (
-              <span
-                key={ripple.id}
-                style={{
-                  position: "absolute",
-                  left: `${ripple.x}px`,
-                  top: `${ripple.y}px`,
-                  width: "20px",
-                  height: "20px",
-                  borderRadius: "50%",
-                  background:
-                    "radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 70%)",
-                  pointerEvents: "none",
-                  animation: "ripple-animation 0.6s ease-out",
-                }}
-              />
-            ))}
-          </button>
+          {href ? (
+            <a
+              ref={buttonRef as any}
+              href={href}
+              onClick={handleClick as any}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              onMouseDown={() => setIsPressed(true)}
+              onMouseUp={() => setIsPressed(false)}
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: `${dimensions.width}px`,
+                height: `${dimensions.height}px`,
+                background: "transparent",
+                border: "none",
+                cursor: "pointer",
+                outline: "none",
+                zIndex: 40,
+                transformStyle: "preserve-3d",
+                transform: "translateZ(25px)",
+                transition:
+                  "all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), width 0.4s ease, height 0.4s ease",
+                overflow: "hidden",
+                borderRadius: "100px",
+                display: "block",
+                textDecoration: "none",
+              }}
+              aria-label={label}
+            >
+              {ripples.map((ripple) => (
+                <span
+                  key={ripple.id}
+                  style={{
+                    position: "absolute",
+                    left: `${ripple.x}px`,
+                    top: `${ripple.y}px`,
+                    width: "20px",
+                    height: "20px",
+                    borderRadius: "50%",
+                    background:
+                      "radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 70%)",
+                    pointerEvents: "none",
+                    animation: "ripple-animation 0.6s ease-out",
+                  }}
+                />
+              ))}
+            </a>
+          ) : (
+            <button
+              ref={buttonRef}
+              onClick={handleClick}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              onMouseDown={() => setIsPressed(true)}
+              onMouseUp={() => setIsPressed(false)}
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: `${dimensions.width}px`,
+                height: `${dimensions.height}px`,
+                background: "transparent",
+                border: "none",
+                cursor: "pointer",
+                outline: "none",
+                zIndex: 40,
+                transformStyle: "preserve-3d",
+                transform: "translateZ(25px)",
+                transition:
+                  "all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), width 0.4s ease, height 0.4s ease",
+                overflow: "hidden",
+                borderRadius: "100px",
+              }}
+              aria-label={label}
+            >
+              {ripples.map((ripple) => (
+                <span
+                  key={ripple.id}
+                  style={{
+                    position: "absolute",
+                    left: `${ripple.x}px`,
+                    top: `${ripple.y}px`,
+                    width: "20px",
+                    height: "20px",
+                    borderRadius: "50%",
+                    background:
+                      "radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 70%)",
+                    pointerEvents: "none",
+                    animation: "ripple-animation 0.6s ease-out",
+                  }}
+                />
+              ))}
+            </button>
+          )}
         </div>
       </div>
     </div>

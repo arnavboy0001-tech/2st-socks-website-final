@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { COMPANY, PRODUCTS, TESTIMONIALS, sendOnWhatsApp } from "../data/catalog";
+import { LiquidMetalButton } from "./ui/liquid-metal-button";
 import {
   ArrowGlyph,
   ClockGlyph,
@@ -270,14 +271,12 @@ export function Contact() {
                     />
                   </div>
 
-                  <button
-                    type="submit"
-                    className="group mt-7 flex w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-fern-600 to-fern-500 py-4 font-mono text-[13px] font-bold uppercase tracking-[0.2em] text-bone-50 shadow-lg shadow-fern-600/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-fern-600/40"
-                  >
-                    <WhatsAppGlyph className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
-                    Send via WhatsApp
-                    <ArrowGlyph className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
-                  </button>
+                  <LiquidMetalButton
+                    label="Send via WhatsApp"
+                    viewMode="text"
+                    size="md"
+                    className="mt-7 w-full"
+                  />
                   <p className="mt-4 text-center font-mono text-[10px] uppercase tracking-[0.2em] text-bone-100/50">
                     Opens WhatsApp to +91 91304 56458 with your enquiry pre-filled
                   </p>

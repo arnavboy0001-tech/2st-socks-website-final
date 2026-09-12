@@ -120,21 +120,15 @@ export function Hero() {
 
           <Reveal delay={460}>
             <div className="mt-10 flex flex-wrap items-center gap-4">
-              <a
+              <LiquidMetalButton
+                label="Browse Catalog"
                 href="#catalog"
-                className="group flex items-center gap-3 rounded-full bg-fern-600 px-8 py-4 font-mono text-[13px] font-semibold uppercase tracking-[0.18em] text-bone-50 shadow-lg shadow-fern-600/30 transition-all duration-300 hover:-translate-y-1 hover:bg-fern-500 hover:shadow-xl hover:shadow-fern-600/40"
-              >
-                Browse Catalog
-                <ArrowGlyph className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
-              </a>
+                size="lg"
+              />
               <LiquidMetalButton
                 label="Get Instant Quote"
-                onClick={() => {
-                  const contactSection = document.getElementById("contact");
-                  if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: "smooth" });
-                  }
-                }}
+                href="#contact"
+                size="lg"
               />
             </div>
           </Reveal>
