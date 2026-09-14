@@ -81,10 +81,10 @@ export function Nav() {
           </span>
           <span className="leading-none">
             <span className="block font-display text-xl uppercase tracking-wide text-bone-50">
-              Ammvi
+              AVM
             </span>
             <span className="block font-mono text-[10px] uppercase tracking-[0.28em] text-marigold-400">
-              Knits &amp; Hosiery
+              texknits
             </span>
           </span>
         </a>
@@ -173,7 +173,7 @@ export function WhatsAppFloat() {
   return (
     <a
       href={`https://wa.me/${COMPANY.whatsapp}?text=${encodeURIComponent(
-        "Hello! I found the Ammvi Knits & Hosiery website and I'm interested in your products."
+        "Hello! I found the AVM texknits website and I'm interested in your products."
       )}`}
       target="_blank"
       rel="noreferrer"
@@ -204,9 +204,9 @@ export function Footer() {
                 <SockGlyph className="h-7 w-7" />
               </span>
               <span className="leading-none">
-                <span className="block font-display text-2xl uppercase text-bone-50">Ammvi</span>
+                <span className="block font-display text-2xl uppercase text-bone-50">AVM</span>
                 <span className="block font-mono text-[10px] uppercase tracking-[0.28em] text-marigold-400">
-                  Knits &amp; Hosiery
+                  texknits
                 </span>
               </span>
             </a>

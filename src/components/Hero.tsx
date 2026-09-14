@@ -111,7 +111,7 @@ export function Hero() {
 
           <Reveal delay={380}>
             <p className="mt-7 max-w-xl text-base leading-relaxed text-bone-100/80 sm:text-lg">
-              <strong className="text-bone-50">Ammvi Knits &amp; Hosiery</strong> — established
+              <strong className="text-bone-50">AVM texknits</strong> — established
               manufacturer &amp; supplier of premium quality kids socks, men&apos;s socks, ladies
               socks, cotton handkerchiefs and sports stockings, with sock customisation done
               strictly to your guidelines.
@@ -162,7 +162,7 @@ export function Hero() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-pine-950/50 via-transparent to-transparent" />
               <p className="absolute bottom-3 left-3 font-mono text-[10px] uppercase tracking-[0.25em] text-bone-100/90">
-                The Ammvi Palette
+                The AVM Palette
               </p>
             </div>
 

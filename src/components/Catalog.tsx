@@ -265,7 +265,7 @@ export function EnquiryModal({
               onSubmit={(e) => {
                 e.preventDefault();
                 sendOnWhatsApp([
-                  "Hello Ammvi Knits & Hosiery!",
+                  "Hello AVM texknits!",
                   "Product enquiry from the website —",
                   "",
                   `Product: ${product ? product.name : "General enquiry"}`,

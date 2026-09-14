@@ -39,7 +39,7 @@ export function Testimonials() {
           <Reveal delay={150}>
             <p className="max-w-sm leading-relaxed text-bone-100/70 lg:text-right">
               From boutique retailers to institutional buyers — what partners say after their
-              first Ammvi order.
+              first AVM texknits order.
             </p>
           </Reveal>
         </div>
@@ -224,7 +224,7 @@ export function Contact() {
                   onSubmit={(e) => {
                     e.preventDefault();
                     sendOnWhatsApp([
-                      "Hello Ammvi Knits & Hosiery!",
+                      "Hello AVM texknits!",
                       "New enquiry from the website —",
                       "",
                       `Name: ${form.name}`,

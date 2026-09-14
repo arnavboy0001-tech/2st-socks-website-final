@@ -23,7 +23,7 @@ export function Customisation() {
             />
             <Reveal delay={150}>
               <p className="mt-7 max-w-md leading-relaxed text-bone-100/75">
-                Beyond our ready range, Ammvi renders sock customisation services adhering
+                Beyond our ready range, AVM texknits renders sock customisation services adhering
                 strictly to customer guidelines — school uniforms with house colours, team
                 stockings with club crests, corporate socks with your logo knit right in.
               </p>
@@ -93,7 +93,7 @@ export function ProductionUnit() {
               <div className="absolute -right-4 -top-4 h-full w-full bg-pine-200/60" />              <div className="relative overflow-hidden shadow-[0_25px_60px_rgba(16,32,26,0.3)]">
                 <SmartImg
                   src={IMAGES.factory}
-                  alt="Rows of computerised sock knitting machines at the Ammvi production unit"
+                  alt="Rows of computerised sock knitting machines at the AVM texknits production unit"
                   fallbackLabel="Production Unit"
                   className="ken-burns aspect-[16/11] w-full object-cover"
                 />

@@ -34,13 +34,13 @@ export default function App() {
           <div className="relative">
             <LayeredText
               lines={[
-                { top: "\u00A0", bottom: "EVERY STEP" },
+                { top: "\u00A0", bottom: "AVM" },
+                { top: "AVM", bottom: "TEXKNITS" },
+                { top: "TEXKNITS", bottom: "EVERY STEP" },
                 { top: "EVERY STEP", bottom: "KNITTED" },
                 { top: "KNITTED", bottom: "SOCKS" },
                 { top: "SOCKS", bottom: "THE RIGHT WAY" },
-                { top: "THE RIGHT WAY", bottom: "PREMIUM" },
-                { top: "PREMIUM", bottom: "QUALITY" },
-                { top: "QUALITY", bottom: "\u00A0" },
+                { top: "THE RIGHT WAY", bottom: "\u00A0" },
               ]}
               className="py-20 md:py-28"
             />
