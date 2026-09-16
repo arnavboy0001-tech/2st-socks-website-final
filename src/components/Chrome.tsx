@@ -279,7 +279,26 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-pine-700 pt-6 font-mono text-[11px] uppercase tracking-[0.18em] text-bone-100/50 sm:flex-row">
+        {/* Built With - Tech Stack */}
+        <div className="mt-14 border-t border-pine-700 pt-8">
+          <h3 className="mb-6 text-center font-mono text-[11px] font-semibold uppercase tracking-[0.3em] text-marigold-500">
+            Built With Modern Technology
+          </h3>
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">
+            <TechBadge name="React" version="18" color="from-cyan-400 to-blue-500" icon="⚛" />
+            <TechBadge name="TypeScript" version="5.7" color="from-blue-500 to-blue-700" icon="TS" />
+            <TechBadge name="Vite" version="6.3" color="from-purple-500 to-yellow-400" icon="⚡" />
+            <TechBadge name="Tailwind" version="4.1" color="from-cyan-500 to-teal-500" icon="🎨" />
+            <TechBadge name="GSAP" version="3.15" color="from-green-400 to-green-600" icon="🎬" />
+            <TechBadge name="WebGL" version="Shaders" color="from-red-500 to-orange-500" icon="✨" />
+            <TechBadge name="Node.js" version="Runtime" color="from-green-500 to-green-700" icon="🟢" />
+          </div>
+          <p className="mt-6 text-center text-xs text-bone-100/40">
+            Powered by modern web technologies for a fast, interactive, and responsive experience
+          </p>
+        </div>
+
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-pine-700 pt-6 font-mono text-[11px] uppercase tracking-[0.18em] text-bone-100/50 sm:flex-row">
           <p>
             © {year} {COMPANY.name} · All rights reserved
           </p>
@@ -290,5 +309,18 @@ export function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+function TechBadge({ name, version, color, icon }: { name: string; version: string; color: string; icon: string }) {
+  return (
+    <div className="group relative overflow-hidden rounded-lg border border-pine-700/50 bg-pine-900/30 p-3 text-center transition-all duration-300 hover:-translate-y-1 hover:border-fern-600/50 hover:shadow-lg hover:shadow-fern-600/10">
+      <div className={`absolute inset-0 bg-gradient-to-br ${color} opacity-0 transition-opacity duration-300 group-hover:opacity-10`} />
+      <div className="relative">
+        <div className="mb-1 text-xl">{icon}</div>
+        <div className="text-xs font-semibold text-bone-100">{name}</div>
+        <div className="mt-0.5 text-[10px] text-bone-100/50">{version}</div>
+      </div>
+    </div>
   );
 }
