@@ -41,7 +41,7 @@ const MILESTONES = [
   {
     year: "2011",
     title: "The First Stitch",
-    body: `Industry veteran ${COMPANY.ceo} lays the foundation stone of AVM texknits in Ichalkaranji — the "Manchester of Maharashtra" — with an aim to serve buyers with superior quality garments and clothing.`,
+    body: `Industry veteran ${COMPANY.ceo} lays the foundation stone of Ammvi Knits & Hosiery in Ichalkaranji — the "Manchester of Maharashtra" — with an aim to serve buyers with superior quality garments and clothing.`,
   },
   {
     year: "2016",
@@ -74,7 +74,7 @@ export function About() {
                   <SmartImg
                     src={IMAGES.bamboo}
                     alt="Bamboo fibre socks folded beside bamboo stems"
-                    fallbackLabel="AVM texknits"
+                    fallbackLabel="Ammvi Hosiery"
                     className="ken-burns aspect-[4/3] w-full object-cover"
                   />
                 </div>
@@ -94,7 +94,7 @@ export function About() {
           {/* right — the story */}
           <div>
             <SectionHead
-              kicker="About AVM texknits"
+              kicker="About Ammvi Knits & Hosiery"
               title={
                 <>
                   A Hosiery House <span className="text-fern-600">Knit on Trust</span>
@@ -152,7 +152,7 @@ export function About() {
           <Reveal>
             <p className="mb-10 flex items-center gap-4 font-mono text-[11px] font-semibold uppercase tracking-[0.3em] text-fern-600">
               <span className="inline-block h-[2px] w-8 bg-fern-600" />
-              The AVM Timeline
+              The Ammvi Timeline
             </p>
           </Reveal>
           <ol className="relative grid gap-10 border-l-2 border-dashed border-fern-600/40 pl-8 sm:grid-cols-2 sm:gap-x-12 lg:grid-cols-4 lg:gap-x-8">

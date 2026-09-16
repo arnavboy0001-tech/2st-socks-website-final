@@ -9,8 +9,8 @@ export type Product = {
 };
 
 export const COMPANY = {
-  name: "AVM texknits",
-  shortName: "AVM",
+  name: "Ammvi Knits & Hosiery",
+  shortName: "Ammvi",
   ceo: "Mr. Manoj Patil",
   established: 2011,
   nature: "Manufacturer, Supplier & Service Provider",
@@ -41,9 +41,9 @@ export function sendOnWhatsApp(rows: Array<string | false | null | undefined>): 
   window.open(whatsappEnquiryUrl(rows), "_blank", "noopener,noreferrer");
 }
 
-export const ABOUT_TEXT = `Headquartered in Ichalkaranji (Kolhapur, Maharashtra), AVM texknits is engaged in the production of clothing that has a huge demand in the fashion industry. The company is known as an established manufacturer and supplier of premium quality kids socks, men's socks, ladies socks, cotton handkerchiefs, and sports stockings. We are also engaged in rendering sock customization services for which we adhere to the customer guidelines. We are committed to providing customers the best products with unique designs and at affordable prices. All our products have been appreciated for their matchless quality, impressive performance, and reasonable pricing.`;
+export const ABOUT_TEXT = `Headquartered in Ichalkaranji (Kolhapur, Maharashtra), Ammvi Knits & Hosiery is engaged in the production of clothing that has a huge demand in the fashion industry. The company is known as an established manufacturer and supplier of premium quality kids socks, men's socks, ladies socks, cotton handkerchiefs, and sports stockings. We are also engaged in rendering sock customization services for which we adhere to the customer guidelines. We are committed to providing customers the best products with unique designs and at affordable prices. All our products have been appreciated for their matchless quality, impressive performance, and reasonable pricing.`;
 
-export const HISTORY_TEXT = `AVM texknits was established in the year 2011, when the industry veteran i.e. Mr. Manoj Patil (Owner) laid the foundation stone with an aim to serve buyers with superior quality garments and clothing. From a handful of knitting machines in Ichalkaranji — the "Manchester of Maharashtra" — the house of AVM has grown into a trusted name for hosiery across schools, sports clubs, retailers and institutions.`;
+export const HISTORY_TEXT = `Ammvi Knits & Hosiery was established in the year 2011, when the industry veteran i.e. Mr. Manoj Patil (Owner) laid the foundation stone with an aim to serve buyers with superior quality garments and clothing. From a handful of knitting machines in Ichalkaranji — the "Manchester of Maharashtra" — the house of Ammvi has grown into a trusted name for hosiery across schools, sports clubs, retailers and institutions.`;
 
 export const STRENGTHS = [
   "Exclusive range of products",
@@ -62,7 +62,7 @@ export const STATS = [
   { value: 16, label: "Product lines", suffix: "+" },
 ];
 
-/* Real product photographs from the AVM texknits catalogue */
+/* Real product photographs from the Ammvi catalogue */
 export const PRODUCTS: Product[] = [
   {
     id: "bamboo-loafer-socks",
